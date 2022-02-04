@@ -1,0 +1,105 @@
+.s3pageassets{
+    /* position: fixed;  */
+    /* display: flex; */
+}
+
+.tops3assets{
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+.tops3assets h2 {
+    margin-left: 2rem;
+}
+
+.tops3assets h6{
+    margin-left: 2rem;
+}
+
+/* .content h6 {
+    font-size: 12px;
+    margin: 5px;
+    margin-left: 2rem;
+} */
+
+.s3assetsstatic {
+    font-size: 30px;
+    margin-left: 20rem;
+    /* position: fixed; */
+}
+
+.s3assetscontent {
+    padding: 6px;
+    font-size: 10px;
+    margin-left: 3rem;
+    background: linear-gradient(to right, #454b50 68%, #83c91b 32%);
+}
+
+.downs3assets{
+    background-color: whitesmoke;
+}
+
+.btn {
+    margin: 1px;
+    padding: 3px;
+    margin-left: 2rem;
+    background-color: white;
+    border: transparent solid 1px;
+    border-color: darkgrey ;
+    border-radius: 5px;
+}
+
+.btn1 {
+    margin: 10px;
+    padding: 3px;
+    background-color: white;
+    border: transparent solid 1px;
+    border-color: darkgrey ;
+    border-radius: 5px;
+}
+
+.btn2 {
+    margin: 10px;
+    padding: 3px;
+    background-color: white;
+    border: transparent solid 1px;
+    border-color: darkgrey ;
+    border-radius: 5px;
+}
+
+.s3assetsmap{
+    /* margin-top: 1.5rem; */
+    margin-left:80rem;
+    font-size: 5rem;
+}
+
+.s3assetsmap span{
+    font-weight: bold;
+}
+
+.s3assetsmap p{
+    /* color: aqua; */
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+}
+
+.s3assetsmap a{
+    color: blue;
+}
+
+.sides3assets{
+    margin-left: 2rem;
+    /* margin-top: 2rem; */
+    padding: 1rem;
+}
+
+.sides3assets li{
+    list-style: none;
+    margin-left: 2rem;
+    padding: 0.5rem;
+}
+
+.s3assetscontent1{
+    margin-left: 25rem;
+}
