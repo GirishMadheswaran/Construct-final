@@ -1,7 +1,7 @@
 import React from 'react';
 import './Topbar.css';
 import { Link } from 'react-router-dom';
-import { useState,useContext } from 'react';
+import { useState} from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // import AuthApi from '../../Auth/Auth';
 // import Cookies from 'js-cookie';

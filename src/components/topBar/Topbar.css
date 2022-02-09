@@ -7,10 +7,10 @@
 .all{
     /* background-color: azure; */
     height: 20px;
-    width: 98%;
+    width: 95.8%;
     box-shadow: 0 0 0.22rem;
-    /* display: flex;
-    position: fixed; */
+    /* display: flex; */
+    position: sticky; 
 }
 
 .nav-bar-left{
@@ -53,7 +53,7 @@
 .dropdown{
     /* width: 200px; */
     /* margin: 50px auto; */
-    margin-left: 40rem;
+    margin-left: 39.5rem;
     position: relative;
     /* background-color: white; */
     /* user-select: none; */

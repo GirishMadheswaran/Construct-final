@@ -1,93 +1,58 @@
-import React, { Component } from 'react';
-import Topbar from '../../components/topBar/Topbar';
-import './createConstruct.css'
+import { useState } from 'react';
+import './createConstruct.css';
+import axios from 'axios';
+import {Link} from 'react-router-dom'
 
+function CreateConstruct() {
+  const url = "https://61fd0c4bf62e220017ce42c2.mockapi.io/api/data"
+    const [data, setData] = useState({
+      name: "",
+      author: "",
+      license: "",
+      repository: "",
+      registry: ""
+    })
+    const [msg , setMsg] = useState("")
 
-class CreateConstruct extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            author: "",
-            license: "",
-            repository: "",
-            registry: "",
-        }
-    }
-
-    handleNameChange = (event) => {
-        this.setState({ name: event.target.value })
-    }
-
-    handleAuthorChange = (event) => {
-        this.setState({ author: event.target.value })
-    }
-
-    handleLicenseChange = (event) => {
-        this.setState({ license: event.target.value })
-    }
-
-    handleRepositoryChange = (event) => {
-        this.setState({ repository: event.target.value })
-    }
-
-    handleRegistryChange = (event) => {
-        this.setState({ registry: event.target.value })
-    }
-
-    handleSubmit = (event) => {
-        alert(`
-            Name : ${this.state.name},
-            Author : ${this.state.author},
-            License : ${this.state.license},
-            Repository : ${this.state.repository},
-            Registry : ${this.state.registry}
-        `)
-        this.setState({ msg: "Successfully saved" })
-        event.preventDefault()
-    }
-
-    handleCancel =()=> {
-        this.setState({
-            name: "",
-            author: "",
-            license: "",
-            repository: "",
-            registry: "",
+  function submit(e){
+        e.preventDefault();
+        axios.post(url, {
+            name: data.name,
+            author: data.author,
+            license: data.license,
+            repository: data.repository,
+            registry: data.registry
         })
+        .then(res=> {
+            console.log(res.data)
+        })
+        setMsg("SAVED SUCCESFULLY")
+        
     }
 
-    render() {
-        const { name, author, license, repository, registry } = this.state;
-        return (
-            <>
-                <Topbar />
-                <div className="contact">
-                    <div className="form">
-                        <div className="form-head">
-                            <h1>CREATE CONSTRUCT</h1>
-                        </div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-body">
-                                <input placeholder="Name" type="name" value={name} onChange={this.handleNameChange} /><br />
-                                <input placeholder="Author" type="text" value={author} onChange={this.handleAuthorChange} /><br />
-                                <input placeholder="License" type="text" value={license} onChange={this.handleLicenseChange} /><br />
-                                <input placeholder="Repository" type="text" value={repository} onChange={this.handleRepositoryChange} /><br />
-                                <input placeholder="Registry" type="text" value={registry} onChange={this.handleRegistryChange} /><br />
-                                <button className="button" type="submit" >Save</button>
-                                <h4 className="last-msg">{this.state.msg}</h4>
-                            </div>
-                        </form>
-                        <form className='form-body'>
-                        <button className="button" type="submit" onClick={this.handleCancel}>Clear</button>
-                        </form>
-                        
-                    </div>
+   function handle(e){
+         const newData={...data}
+         newData[e.target.id] = e.target.value
+         setData(newData)
+   }
+
+    return (
+        <div className='postform'>
+            <form onSubmit={(e)=> submit(e)} className='form'>
+             <h1>CREATE CONSTRUCT</h1>
+                <div className='form-head'>
+                    <input onChange={(e)=>handle(e)} id='name' required value={data.name} placeholder='Name' type='text'></input>
+                    <input onChange={(e)=>handle(e)} id='author' required value={data.author} placeholder='Author' type='text'></input>
+                    <input onChange={(e)=>handle(e)} id='license' required value={data.license} placeholder='License' type='text'></input>
+                    <input onChange={(e)=>handle(e)} id='repository' required value={data.repository} placeholder='Repository' type='text'></input>
+                    <input onChange={(e)=>handle(e)} id='registry' required value={data.registry} placeholder='Registry' type='text'></input>
                 </div>
-            </>
-        )
-    }
+                <p>{msg}</p>
+             <button className='submitbutton'>Submit</button>
+             <Link to="/dev"><button className='cancelbutton'>Cancel</button></Link>
+            </form>
+        </div>
+    );
 }
 
 export default CreateConstruct;

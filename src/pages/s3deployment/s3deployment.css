@@ -1,0 +1,77 @@
+.s3deploymentpage{
+    /* position: fixed;  */
+    /* display: flex; */
+}
+
+.tops3deployment{
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+.tops3deployment h2 {
+    margin-left: 2rem;
+}
+
+.tops3deployment h6{
+    margin-left: 2rem;
+}
+
+/* .content h6 {
+    font-size: 12px;
+    margin: 5px;
+    margin-left: 2rem;
+} */
+
+.s3deploymentmap span{
+    font-weight: bold;
+}
+
+.s3deploymentmap p{
+    /* color: aqua; */
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+}
+
+.s3deploymentmap a{
+    color: blue;
+}
+
+.s3deploymentmap{
+    /* margin-top: 1.5rem; */
+    margin-left:80rem;
+    font-size: 5rem;
+}
+
+.downs3deployment{
+    background-color: whitesmoke;
+}
+
+.sides3deployment{
+    margin-left: 2rem;
+    /* margin-top: 2rem; */
+    padding: 1rem;
+}
+
+.sides3deployment li{
+    list-style: none;
+    margin-left: 2rem;
+    padding: 0.5rem;
+}
+
+.s3deploymentstatic {
+    font-size: 30px;
+    margin-left: 20rem;
+    /* position: fixed; */
+}
+
+.s3deploymentcontent {
+    padding: 6px;
+    font-size: 10px;
+    margin-left: 3rem;
+    background: linear-gradient(to right, #454b50 68%, #83c91b 32%);
+}
+
+.s3assetscontent1{
+    margin-left: 25rem;
+}

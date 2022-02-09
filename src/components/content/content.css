@@ -1,16 +1,18 @@
 .mainPage {
     flex: 7;
+    /* position: sticky; */
+    /* margin-top: 5rem; */
 }
 
 .main{
     /* text-align: center;
     align-items: center; */
-    margin-left: 20rem;
+    margin-left: 23rem;
     padding: 0;
 }
 
 .input{
-    width: 60rem;
+    width: 65rem;
     margin-top: 1rem;
     height: 2rem;
     border: transparent solid 1px;
@@ -20,5 +22,113 @@
     /* background-color: black; */
 }
 
+.container {
+    display: flex;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0  0.2rem 0.5rem gray;
+    border: 2px solid transparent !important;
+    height: 12rem;
+    /* border: transparent solid 1px;
+    border-color: darkgrey ; */
+    width: 65rem;
+}
+
+.container p {
+    font-size: 13px;
+    padding: 0;
+    margin: 1rem;
+    text-decoration: none;
+}
 
 
+
+.boxLeft {
+flex: 7;
+}
+
+.box-fr {
+padding: 0;
+margin-top: 1rem;
+}
+
+.box-fr span {
+    padding: 5px;
+    text-decoration: none;
+    margin: 1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+    background-color: rgb(207, 74, 2);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.box-fr span:hover {
+text-decoration: none;
+background-color: rgb(207, 74, 2);
+}
+
+.box-fr p {
+justify-content: center;
+}
+
+.box-sc {
+    padding: 0;
+    margin-top: 3rem;
+    justify-content: space-between;
+}
+
+.box-sc a {
+padding: 5px;
+text-decoration: none;
+color: black;
+margin: 1rem;
+border-radius: 6px;
+background-color: white;
+border: transparent solid 1px;
+border-color: darkgray;
+font-size: 12px;
+}
+
+.vl {
+height: 192px;
+border-left: 0.4px solid rgb(214, 208, 208);
+}
+
+.boxRight {
+flex: 3;
+border: 2px solid transparent !important;
+}
+
+.boxRight p {
+font-size: 12px;
+}
+
+.typescript {
+width: 24px;
+height: 24px;
+margin-left: 30px;
+cursor: pointer;
+}
+
+.python {
+width: 24px;
+height: 24px;
+margin-left: 30px;
+cursor: pointer;
+}
+
+.java {
+width: 24px;
+height: 24px;
+cursor: pointer;
+}
+
+.net {
+width: 24px;
+height: 24px;
+cursor: pointer;
+}

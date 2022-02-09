@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import './s3assets.css';
+import './s3lambda.css';
 import Topbar from '../../components/topBar/Topbar';
 // import FileCopyIcon from '@material-ui/icons/FileCopy';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-function S3Assets() {
+function S3lambda() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -34,15 +34,15 @@ function S3Assets() {
   return(
     <>
       < Topbar/>
-      <div className='s3assetspage'>
-        <div className='tops3assets'>
-          <h2><b>@aws-cdk/aws-s3-assets</b></h2>
+      <div className='s3lambdapage'>
+        <div className='tops3lambda'>
+          <h2><b>@aws-cdk/aws-s3-lambda</b></h2>
           <h6>Deploy local files and directories to S3</h6>
           <button className='btn'>AWS CDK v1</button>
           <button className='btn1'>AWS CloudFormation</button>
           <button className='btn2'>AWS Lambda</button>
         </div>
-        <div className='s3assetsmap'>
+        <div className='s3lambdamap'>
           {items.map((value,index) =>{
             return(
               <div key={index}>
@@ -57,21 +57,20 @@ function S3Assets() {
           })
           }
         </div>
-        <div className='downs3assets'>
-          <div className='sides3assets'>
+        <div className='downs3lambda'>
+          <div className='sides3lambda'>
             <h3>Readme</h3>
             <li>Encryption</li>
             <li>Permissions</li>
           </div>
-          <div className='s3assetsstatic'>
-            <h2><b>AWS CDK Assets</b></h2>
-            <span className='s3assetscontent'>CDK-CONSTRUCT STABLE</span>
-            <p>Assets are local files or directories which are needed by a CDK app. A common example is a directory which contains the handler code for a Lambda function, but assets can represent any artifact that is needed for the app's operation. Assets are local files or 
-              directories which are needed by a CDK app. A common example is a directory which contains the handler code for a Lambda function, but assets can represent any artifact that is needed for the app's operation.  
-              When deploying a CDK app that includes constructs with assets, the CDK toolkit will first upload all the assets to S3, and only then deploy the stacks. The S3 locations of the uploaded assets will be passed in as CloudFormation Parameters to the relevant stacks.
+          <div className='s3lambdastatic'>
+            <h2><b>aws-s3-lambda module</b></h2>
+            <span className='s3lambdacontent'>CDK-CONSTRUCT STABLE</span>
+            <p>S3 Object Lambda works with your existing applications and uses AWS Lambda functions to automatically process and transform your data as it is being retrieved from S3. 
+              The Lambda function is invoked inline with a standard S3 GET request, so you don't need to change your application code
             </p>
           </div>
-          <div className='s3assetscontent1'>
+          <div className='s3lambdacontent1'>
             <p>All types moved to @aws-cdk/core.</p>
           </div>
         </div>
@@ -82,7 +81,7 @@ function S3Assets() {
   
 
 
-export default S3Assets;
+export default S3lambda;
 
 
 

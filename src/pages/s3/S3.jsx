@@ -3,7 +3,7 @@ import Topbar from '../../components/topBar/Topbar';
 import './s3.css';
 // import Axios from 'axios';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 function S3() {
 
@@ -11,8 +11,13 @@ function S3() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
+  const apiUrl = "https://0qglpz3009.execute-api.us-east-1.amazonaws.com/sandbox/searchconstruct";
+  const location = useLocation();
+  const path = location.pathname.split('/')[1];
+  console.log('path --> ', path)
+
   useEffect(() => {
-    fetch("http://localhost:3002/s3")
+    fetch(apiUrl + "?key=" +path) 
       .then(res => res.json())
       .then(
         (result) => {
@@ -20,9 +25,6 @@ function S3() {
           setItems(result.hits.hits);
           // console.log('response 2--> ' , result.hits);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
@@ -72,7 +74,7 @@ return(
             You can configure multiple inventory lists for a bucket. You can configure what object metadata to include in the inventory, whether to list all object versions or only current versions, where to store the inventory list file output, and whether to generate the inventory on a daily or weekly basis.</p>
           </div>
           <div className='clipboards3'>
-            <FileCopyIcon className='copyicon' />
+            <FileCopyIcon className='copyicons3' />
             <p>const bucket = new s3.Bucket(this, 'MyFirstBucket');</p>
           </div>
         </div>

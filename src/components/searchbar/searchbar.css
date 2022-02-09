@@ -36,7 +36,7 @@
   display: none;
 } */
 
-.dataResult .dataItem {
+.dataResult .daItem {
   width: 100%;
   height: 50px;
   display: flex;
@@ -46,16 +46,7 @@
 
 .dataResult p{
   margin-left: 10px;
-  line-height: 1rem;
-}
-a {
-  text-decoration: none;
+  line-height: 0.5rem;
+  text-decoration: none
 }
 
-a:hover {
-  background-color: lightgrey;
-}
-
-#clearBtn {
-  cursor: pointer;
-}

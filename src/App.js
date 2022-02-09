@@ -6,15 +6,16 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Login from './pages/Login/login';
 import Home from './pages/home/Home';
 import Dev from './pages/Dev/Dev';
-import CreateConstruct from './pages/createConstruct/createConstruct';
+import Createconstruct from './pages/createConstruct/createConstruct';
 import AuthApi from './Auth/Auth';
 import S3 from './pages/s3/S3';
 import S3Assets from './pages/s3assets/S3Assets';
-import Notification from './pages/notification/Notification';
+import S3Notification from './pages/s3notification/s3notification';
+import S3deployment from './pages/s3deployment/s3deployment';
+import S3lambda from './pages/s3lambda/s3lambda';
 import Cookies from 'js-cookie';
 
 function App() {
@@ -48,14 +49,16 @@ function App() {
 const Routes = () =>{
   const Auth = useContext(AuthApi)
   return(
-    <Switch history={useHistory}>
+    <Switch>
       <ProtectedLogin  path='/login' auth={Auth.auth} component={Login} />
       <ProtectedRoute  path='/home' auth={Auth.auth} component={Home} />    
       <Route  path='/dev' auth={Auth.auth} component={Dev} />
-      <Route  path='/create' auth={Auth.auth} component={CreateConstruct} />
-      <Route  path='/s3' auth={Auth.auth}  component={S3} />
-      <Route  path='/assets' auth={Auth.auth}  component={S3Assets} />
-      <Route  path='/notification' auth={Auth.auth}  component={Notification} />
+      <Route  path='/create' auth={Auth.auth} component={Createconstruct} />
+      <Route exact path='/aws-s3' auth={Auth.auth}  component={S3} />
+      <Route exact path='/aws-s3-assets' auth={Auth.auth}  component={S3Assets} />
+      <Route exact path='/aws-s3-notification' auth={Auth.auth}  component={S3Notification} />
+      <Route exact path='/aws-s3-deployment' auth={Auth.auth}  component={S3deployment} />
+      <Route exact path='/aws-s3-lambda' auth={Auth.auth}  component={S3lambda} />
     </Switch>
   )
   

@@ -7,7 +7,7 @@ function Sidebar(){
         <div className='App'>
             <h6>Filters</h6>
             {/* <Scrollbars style={{ width:"100%", height:"100%" }}> */}
-            <div className='type1'>
+            <div className='cdktype'>
                 <h3>CDK Type<HelpIcon className='sideIcon' fontSize='small'/></h3>
                 <input type="radio" id="topping" name="topping" value="Any CDK Type"/>Any CDK Type<br></br>
                 <input type="radio" id="topping" name="topping" value="Any CDK" />AWS CDK<br></br>
